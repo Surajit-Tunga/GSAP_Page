@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import {  useRef, useState } from "react";
 import Button from './Button';
 import { TiLocationArrow } from 'react-icons/ti';
 import { useGSAP } from '@gsap/react';
@@ -10,7 +10,7 @@ gsap.registerPlugin(ScrollTrigger);
 const Hero = () => {
     const[currentIndex, setCurrentIndex]= useState(1);
     const[hasClicked, setHasClicked]= useState(false);
-    const[isLoading, setIsLoading]= useState(true);
+    
     const[loadedVideos, setLoadedVideos]= useState(0);
 
     const totalVideos=4;
@@ -20,10 +20,7 @@ const Hero = () => {
         setLoadedVideos(prev=>prev+1);
     };
 
-    // useEffect(() => {
-    //      if (loadedVideos === totalVideos - 1) {
-    //         setLoading(false);
-    //     }  }, [loadedVideos]);
+   
 
     const upcomingVdIndex = (currentIndex % totalVideos)+1
 
@@ -83,15 +80,6 @@ useGSAP(()=>{
     const getVdSrc = (index) => `videos/hero-${index}.mp4`
   return (
     <div className='relative h-dvh w-screen overflow-x-hidden'>
-        {/* {loading && (
-        <div className="flex-center absolute z-[100] h-dvh w-screen overflow-hidden bg-violet-50">
-          <div className="three-body">
-            <div className="three-body__dot"></div>
-            <div className="three-body__dot"></div>
-            <div className="three-body__dot"></div>
-          </div>
-        </div>
-      )} */}
         <div id='video-frame' className='relative z-10 h-dvh w-screen overflow-hidden  bg-blue-75'>
             <div>
                 <div className='mask-clip-path absolute-center absolute z-50 size-64  cursor-pointer overflow-hidden rounded-lg'>
@@ -111,7 +99,7 @@ useGSAP(()=>{
                  src={getVdSrc(upcomingVdIndex)}
                  loop muted
                  id='next-video'
-                 className='absoltue-center invisible absolute z-20 size-64 object-cover object-center origin-center'
+                 className='absolute-center invisible absolute z-20 size-64 object-cover object-center origin-center'
                  onLoadedData={handleVdLoad}
                 />
                 <video
