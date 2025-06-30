@@ -15,6 +15,10 @@ This project is a visually engaging web page created as a learning exercise foll
 - Clean, modular code structure for easy customization.
 - Optimized for both desktop and mobile experiences.
 
+## Demo
+
+Check out the live demo: [https://gsap-page-umber.vercel.app/](https://gsap-page-umber.vercel.app/)
+
 ## Reference
 
 This project was inspired by and built with the help of the [JS Mastery](https://youtu.be/zA9r5zTllx4?si=rEymhx80g03yd5RL) tutorial.
